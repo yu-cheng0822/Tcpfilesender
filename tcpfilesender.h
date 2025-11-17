@@ -19,10 +19,18 @@ public slots:
 private:
     QProgressBar *clientProgressBar;
     QLabel *clientStatusLabel;
-    QPushButton *startButton,quitButton,opneButton;
+    QPushButton* startButton;
+    QPushButton* quitButton;
+    QPushButton* openButton;
     QDialogButtonBox *buttonBox;
     QTcpSocket tcpClient;
 
-
+    qint64 totalBytes;
+    qint64 bytesWritten;
+    qint64 bytesToWrite;
+    qint64 loadSize;
+    QString fileName;
+    QFile *localFile;
+    QByteArray outBlock;
 };
 #endif // TCPFILESENDER_H
